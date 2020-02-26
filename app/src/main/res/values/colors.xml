@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
+    <color name="txtColor">#393E56</color>
+    <color name="txtHintColor">#CCCCCC</color>
+    <color name="baseLine">#f2f2f2</color>
+    <color name="mainColor">#D83821</color>
 </resources>
