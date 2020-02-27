@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">FlutterRode</string>
+    <string name="app_name">TechRode</string>
+    <string name="back_btn">&#xe606;</string>
 </resources>

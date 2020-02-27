@@ -2,7 +2,7 @@ package cn.rubintry.self.common.manager;
 
 import com.orhanobut.hawk.Hawk;
 
-import cn.rubintry.self.common.KeyConstants;
+import cn.rubintry.self.common.constants.KeyConstants;
 import cn.rubintry.self.model.LoginModel;
 
 public class LoginManager {

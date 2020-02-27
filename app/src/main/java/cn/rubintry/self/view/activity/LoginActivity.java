@@ -40,6 +40,16 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
+    protected int setTopBarBackground() {
+        return 0;
+    }
+
+    @Override
+    protected int setBackBtnBackground() {
+        return 0;
+    }
+
+    @Override
     protected boolean showBackBtn() {
         return false;
     }
@@ -47,6 +57,11 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected String setTitleString() {
         return "";
+    }
+
+    @Override
+    protected int setTitleColor() {
+        return 0;
     }
 
     @Override
@@ -98,5 +113,15 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void onError(Throwable e, int request) {
         super.onError(e, request);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        //跳转桌面
+        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+        homeIntent.addCategory(Intent.CATEGORY_HOME);
+        homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(homeIntent);
     }
 }

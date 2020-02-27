@@ -23,12 +23,14 @@ import cn.rubintry.self.common.utils.PasswordUtils;
 public class RegisterActivity extends BaseActivity {
 
 
-    @BindView(R.id.edtUsername)
-    EditText edtUsername;
+    @BindView(R.id.edtMobile)
+    EditText edtMobile;
     @BindView(R.id.edtPassword)
     EditText edtPassword;
     @BindView(R.id.edtPasswordAgain)
     EditText edtPasswordAgain;
+    @BindView(R.id.edtNickName)
+    EditText edtNickName;
     @Override
     protected boolean lightMode() {
         return true;
@@ -45,8 +47,23 @@ public class RegisterActivity extends BaseActivity {
     }
 
     @Override
+    protected int setTitleColor() {
+        return 0;
+    }
+
+    @Override
     protected int attachedLayoutRes() {
         return R.layout.activity_register;
+    }
+
+    @Override
+    protected int setTopBarBackground() {
+        return 0;
+    }
+
+    @Override
+    protected int setBackBtnBackground() {
+        return 0;
     }
 
     @Override
@@ -65,15 +82,15 @@ public class RegisterActivity extends BaseActivity {
         switch (view.getId()){
             case R.id.tvRegister:
                 if(checkInfo()){
-                    apiPresenter.register(edtUsername.getText().toString() , edtPassword.getText().toString() , RequestCodeConstants.REGISTER);
+                    apiPresenter.register(edtMobile.getText().toString() , edtNickName.getText().toString() , edtPassword.getText().toString() , RequestCodeConstants.REGISTER);
                 }
                 break;
         }
     }
 
     private boolean checkInfo() {
-        if(TextUtils.isEmpty(edtUsername.getText().toString())){
-            ToastUtils.showShort("用户名不能为空");
+        if(TextUtils.isEmpty(edtMobile.getText().toString())){
+            ToastUtils.showShort("手机号不能为空");
             return false;
         }else if(TextUtils.isEmpty(edtPassword.getText().toString())){
             ToastUtils.showShort("密码不能为空");
@@ -87,7 +104,7 @@ public class RegisterActivity extends BaseActivity {
         }else if(!PasswordUtils.isStrongPassword(edtPassword.getText().toString())){
             ToastUtils.showShort("密码强度低");
             return false;
-        }else if(!RegexUtils.isMobileSimple(edtUsername.getText().toString())){
+        }else if(!RegexUtils.isMobileSimple(edtMobile.getText().toString())){
             ToastUtils.showShort("手机号格式不正确");
             return false;
         }

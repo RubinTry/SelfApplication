@@ -1,6 +1,7 @@
 package cn.rubintry.self.common.base;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import com.blankj.utilcode.util.BarUtils;
 
@@ -31,6 +34,7 @@ public abstract class BaseActivity extends RxBaseActivity implements IBasePresen
     @BindView(R2.id.toolbar)
     Toolbar toolbar;
     private TextView tvBarTitle;
+    private ConstraintLayout clTopContainer;
     private ImageView imgToolbarBack;
 
 
@@ -83,6 +87,7 @@ public abstract class BaseActivity extends RxBaseActivity implements IBasePresen
                 }else{
                     imgToolbarBack.setVisibility(View.GONE);
                 }
+
                 imgToolbarBack.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -96,6 +101,19 @@ public abstract class BaseActivity extends RxBaseActivity implements IBasePresen
     }
 
     /**
+     * 设置标题栏背景
+     * @return
+     */
+    protected abstract int setTopBarBackground();
+
+
+    /**
+     *设置返回键按钮的颜色
+     * @return
+     */
+    protected abstract int setBackBtnBackground();
+
+    /**
      * 是否显示返回键（用toolbar的情况下）
      * @return
      */
@@ -106,6 +124,10 @@ public abstract class BaseActivity extends RxBaseActivity implements IBasePresen
      * @return
      */
     protected abstract String setTitleString();
+
+
+    protected abstract int setTitleColor();
+
 
     protected void initViews(){
 

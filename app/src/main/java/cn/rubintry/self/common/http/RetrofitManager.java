@@ -1,5 +1,7 @@
 package cn.rubintry.self.common.http;
 
+import android.text.TextUtils;
+
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
@@ -20,10 +22,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitManager {
 
-    private static final String BASE_URL = "http://wzlsz.ticp.net";
+//    private static final String BASE_URL = "http://wzlsz.ticp.net";
+    private static final String BASE_URL = "https://rubintry.cn";
     private static ApiService service;
 
     public static ApiService getDefault(){
+        return getDefault(null);
+    }
+
+
+    public static ApiService getDefault(String url){
         //创建一个okhttpClient构造器
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         //把所有关于网络请求的日志全部输出在控制台logcat里
@@ -31,7 +39,7 @@ public class RetrofitManager {
         httpLoggingInterceptor.level(HttpLoggingInterceptor.Level.BODY);
         //加入log日志拦截器
         builder.addInterceptor(httpLoggingInterceptor);
-
+        builder.addInterceptor(new CommonInterceptor());
 
         //把okhttpClient构建出来
         OkHttpClient client = builder
@@ -44,15 +52,29 @@ public class RetrofitManager {
                 .build();
 
 
-        //拿到ApiService对象
-        service = new Retrofit.Builder()
-                .client(client)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                //加入json转换器（基于gson框架）
-                .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(BASE_URL)
-                .build()
-                .create(ApiService.class);
+        if(TextUtils.isEmpty(url)){
+            //拿到ApiService对象
+            service = new Retrofit.Builder()
+                    .client(client)
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    //加入json转换器（基于gson框架）
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .baseUrl(BASE_URL)
+                    .build()
+                    .create(ApiService.class);
+        }else{
+            //拿到ApiService对象
+            service = new Retrofit.Builder()
+                    .client(client)
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    //加入json转换器（基于gson框架）
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .baseUrl(url)
+                    .build()
+                    .create(ApiService.class);
+        }
+
+
 
         return service;
     }

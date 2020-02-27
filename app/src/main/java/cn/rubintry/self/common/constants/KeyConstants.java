@@ -1,4 +1,4 @@
-package cn.rubintry.self.common;
+package cn.rubintry.self.common.constants;
 
 /**
  * @author logcat
@@ -7,4 +7,5 @@ package cn.rubintry.self.common;
 public class KeyConstants {
 
     public static final String LOGIN_INFO = "LOGIN_INFO";
+    public static final String FIRST_LAUNCH = "FIRST_LAUNCH";
 }

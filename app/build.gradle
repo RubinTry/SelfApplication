@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: "com.blankj.bus"
 
 android {
     compileSdkVersion 29
@@ -11,6 +12,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -57,4 +60,15 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
     implementation "com.orhanobut:hawk:2.0.1"
+    implementation 'com.google.android.material:material:1.1.0'
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+
+    def qmui_arch_version = '2.0.0-alpha02'
+    implementation "com.qmuiteam:arch:$qmui_arch_version"
+    implementation "com.qmuiteam:qmui:$qmui_arch_version"
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }

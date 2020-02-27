@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@mipmap/bg_mine"></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgSetting"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@mipmap/setting"
+                android:adjustViewBounds="true"
+                android:layout_marginStart="16dp"></ImageView>
+            
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"></View>
+
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@mipmap/message"
+                android:adjustViewBounds="true"
+                android:layout_marginEnd="16dp"></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:qmui_is_circle="true"
+                android:src="@mipmap/header"
+                app:qmui_border_width="5dp"
+                app:qmui_border_color="@color/white"
+                android:layout_marginStart="16dp"></com.qmuiteam.qmui.widget.QMUIRadiusImageView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvNickName"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="我是用户名"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="bottom"
+                    android:paddingStart="20dp"
+                    android:paddingBottom="5dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/tvMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="138****9302"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:paddingStart="20dp"></TextView>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@mipmap/enter"
+                android:layout_marginEnd="16dp"></ImageView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</FrameLayout>

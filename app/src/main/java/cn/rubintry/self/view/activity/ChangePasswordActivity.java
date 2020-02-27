@@ -45,8 +45,23 @@ public class ChangePasswordActivity extends BaseActivity {
     }
 
     @Override
+    protected int setTitleColor() {
+        return 0;
+    }
+
+    @Override
     protected int attachedLayoutRes() {
         return R.layout.activity_change_password;
+    }
+
+    @Override
+    protected int setTopBarBackground() {
+        return 0;
+    }
+
+    @Override
+    protected int setBackBtnBackground() {
+        return 0;
     }
 
     @Override
@@ -64,7 +79,7 @@ public class ChangePasswordActivity extends BaseActivity {
         switch (view.getId()){
             case R.id.tvSubmit:
                 if(checkInfo()){
-                    apiPresenter.changePassword(LoginManager.getInstance().getLoginInfo().getId(),
+                    apiPresenter.changePassword(LoginManager.getInstance().getLoginInfo().getUser_id(),
                             LoginManager.getInstance().getUsername() , edtPassword.getText().toString() , RequestCodeConstants.CHANGE_PASSWORD);
                 }
                 break;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cdArticleContainer"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/white"
+    app:cardCornerRadius="10dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="10dp">
+
+
+    <TextView
+        android:id="@+id/tvArticleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="标题"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/txtColor"
+        android:textFontWeight="100"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:maxEms="20"
+        android:maxLines="1"></TextView>
+
+</androidx.cardview.widget.CardView>

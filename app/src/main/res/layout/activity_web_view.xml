@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.WebViewActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTopContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_main_topbar"
+        android:elevation="5dp"
+        android:fitsSystemWindows="true"
+        android:minHeight="?actionBarSize">
+
+
+        <ImageView
+            android:id="@+id/imgToolbarBack"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@mipmap/white_back"
+            android:padding="16dp"
+            ></ImageView>
+
+        <TextView
+            android:id="@+id/tvBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.qmuiteam.qmui.widget.QMUIProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        app:qmui_background_color="@color/transparent"
+        app:qmui_max_value="100"
+        app:qmui_progress_color="#FFE75D"
+        app:qmui_type="type_rect"
+        app:qmui_value="@integer/qmui_anim_duration" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+</LinearLayout>

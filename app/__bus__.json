@@ -1,0 +1,9 @@
+{
+  "BusUtilsClass": "com.blankj.utilcode.util.BusUtils",
+  "rightBus": {
+    "REFRESH_FIELD": [
+      "{ desc: cn.rubintry.self.view.fragment.FieldFragment#refreshField(), threadMode: MAIN }"
+    ]
+  },
+  "wrongBus": {}
+}

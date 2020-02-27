@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshNews"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srlEnableLoadMore="false">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNewsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

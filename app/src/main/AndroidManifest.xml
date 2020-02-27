@@ -13,11 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activity.LoginActivity"></activity>
+        <activity android:name=".view.activity.SettingActivity"></activity>
+        <activity android:name=".view.activity.NewsDetailActivity" />
+        <activity android:name=".view.activity.WebViewActivity" />
+        <activity android:name=".view.activity.SplashActivity2" />
+        <activity android:name=".view.activity.LoginActivity" />
         <activity android:name=".view.activity.ChangePasswordActivity" />
         <activity android:name=".view.activity.RegisterActivity" />
         <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.SplashActivity"
+        <activity
+            android:name=".view.activity.SplashActivity"
             android:theme="@style/TranslucentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
